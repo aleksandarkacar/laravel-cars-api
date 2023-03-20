@@ -20,10 +20,10 @@ class CarFactory extends Factory
         return [
             'model' => fake()->firstName(),
             'year' => random_int(1990,2023),
-            'max_speed' => random_int(150,220),
+            'max_speed' => random_int(20,300),
             'isautomatic' => (bool)random_int(0,1),
             'engine' => $engineNames[random_int(0,2)],
-            'number_of_doors' => random_int(2,8),
+            'number_of_doors' => random_int(2,5),
             'brand' => fake()->lastName()
         ];
     }
