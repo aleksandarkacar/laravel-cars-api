@@ -16,11 +16,12 @@ class CarsController extends Controller
     {
         $brand = $request->query('brand', '');
         $model = $request->query('model', '');
-        $per_page = $request->query('per_page', 10);
+        // $per_page = $request->query('per_page', 10);
               
         $cars = Car::searchByBrand($brand)
-        ->searchByModel($model)
-        ->paginate($per_page);
+        ->searchByModel($model)->get();
+
+        // $cars = Car::all();
 
         return response()->json($cars);
     }
